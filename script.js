@@ -95,14 +95,16 @@ demoButton.addEventListener("click", () => {
 });
 
 function buildRequestFromForm() {
+    const origin = document.getElementById("origin").value.trim().toUpperCase();
+
     const cities = document.getElementById("cities").value
         .split(",")
         .map(city => city.trim().toUpperCase())
         .filter(Boolean);
 
     return {
-        origin: document.getElementById("origin").value.trim().toUpperCase(),
-        final_destination: "AMS",
+        origin: origin,
+        final_destination: origin,
         start_date: document.getElementById("startDate").value,
         end_date: document.getElementById("endDate").value,
         budget: Number(document.getElementById("budget").value),
