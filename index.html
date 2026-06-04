@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Travel Planner</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <div>
+                <p class="eyebrow">Flight search demo</p>
+                <h1>AI Travel Planner</h1>
+                <p class="subtitle">
+                    Cerca itinerari multicittà rispettando budget, date e aeroporti scelti.
+                </p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Parametri di ricerca</h2>
+
+            <form id="searchForm" class="form">
+                <div class="field">
+                    <label for="origin">Aeroporto di partenza</label>
+                    <input id="origin" name="origin" type="text" value="FCO" placeholder="Es. FCO" required />
+                </div>
+
+                <div class="field">
+                    <label for="budget">Budget massimo (€)</label>
+                    <input id="budget" name="budget" type="number" value="300" min="1" required />
+                </div>
+
+                <div class="field">
+                    <label for="startDate">Data inizio</label>
+                    <input id="startDate" name="startDate" type="date" value="2026-08-22" required />
+                </div>
+
+                <div class="field">
+                    <label for="endDate">Data fine</label>
+                    <input id="endDate" name="endDate" type="date" value="2026-08-31" required />
+                </div>
+
+                <div class="field field-wide">
+                    <label for="cities">Destinazioni possibili</label>
+                    <input id="cities" name="cities" type="text" value="PMI, AMS, AGP, MLA, RHO" placeholder="Es. PMI, AMS, AGP" />
+                    <small>Scrivile separate da virgola. Puoi adattarle al formato richiesto dal backend.</small>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" id="searchButton">Cerca itinerari</button>
+                    <button type="button" id="demoButton" class="secondary">Mostra demo</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="status" id="statusBox" hidden></section>
+
+        <section class="results-header" id="resultsHeader" hidden>
+            <div>
+                <p class="eyebrow">Risultati</p>
+                <h2 id="resultsTitle">Itinerari trovati</h2>
+            </div>
+            <p id="summaryText"></p>
+        </section>
+
+        <section id="results" class="results"></section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

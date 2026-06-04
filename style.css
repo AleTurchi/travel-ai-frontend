@@ -1,0 +1,256 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #182033;
+}
+
+.page {
+    width: min(1100px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 32px 0 56px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #172554, #2563eb);
+    color: white;
+    border-radius: 28px;
+    padding: 38px;
+    margin-bottom: 24px;
+    box-shadow: 0 18px 45px rgba(37, 99, 235, 0.22);
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 12px;
+    font-weight: 700;
+    opacity: 0.75;
+}
+
+h1, h2, h3, p {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: clamp(36px, 7vw, 64px);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    max-width: 650px;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+.panel, .status, .results-header, .card {
+    background: white;
+    border: 1px solid #e6ebf2;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.panel {
+    padding: 26px;
+    margin-bottom: 18px;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.field-wide {
+    grid-column: span 4;
+}
+
+label {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+input {
+    border: 1px solid #cfd8e6;
+    border-radius: 14px;
+    padding: 13px 14px;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+small {
+    color: #64748b;
+}
+
+.actions {
+    grid-column: span 4;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: 0;
+    border-radius: 14px;
+    padding: 13px 18px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    background: #2563eb;
+    color: white;
+}
+
+button:hover {
+    filter: brightness(0.96);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+button.secondary {
+    background: #e8eef8;
+    color: #172554;
+}
+
+.status {
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    color: #334155;
+}
+
+.status.error {
+    border-color: #fecaca;
+    background: #fff1f2;
+    color: #991b1b;
+}
+
+.results-header {
+    padding: 22px 24px;
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.results-header p:last-child {
+    margin-bottom: 0;
+    color: #475569;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.card {
+    padding: 22px;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 999px;
+    padding: 6px 10px;
+    background: #ecfdf5;
+    color: #047857;
+    font-weight: 800;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.price {
+    font-size: 32px;
+    font-weight: 900;
+    color: #172554;
+}
+
+.route {
+    color: #475569;
+    margin-bottom: 16px;
+}
+
+.flight {
+    display: grid;
+    grid-template-columns: 105px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 0;
+    border-top: 1px solid #edf2f7;
+}
+
+.flight-date {
+    font-weight: 800;
+    color: #334155;
+}
+
+.flight-route {
+    font-weight: 900;
+}
+
+.flight-meta {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.flight-price {
+    font-weight: 900;
+}
+
+.empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 36px;
+    color: #64748b;
+}
+
+@media (max-width: 850px) {
+    .form, .results {
+        grid-template-columns: 1fr;
+    }
+
+    .field-wide, .actions {
+        grid-column: span 1;
+    }
+
+    .results-header {
+        display: block;
+    }
+
+    .flight {
+        grid-template-columns: 1fr;
+    }
+
+.badge-danger {
+    background: #fff1f2;
+    color: #be123c;
+}
+}
