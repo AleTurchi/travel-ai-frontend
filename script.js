@@ -102,13 +102,19 @@ function buildRequestFromForm() {
         .map(city => city.trim().toUpperCase())
         .filter(Boolean);
 
+    const finalDestination = cities.length > 0
+        ? cities[cities.length - 1]
+        : origin;
+
+    const intermediateCities = cities.slice(0, -1);
+
     return {
         origin: origin,
-        final_destination: origin,
+        final_destination: finalDestination,
         start_date: document.getElementById("startDate").value,
         end_date: document.getElementById("endDate").value,
         budget: Number(document.getElementById("budget").value),
-        candidate_cities: cities
+        candidate_cities: intermediateCities
     };
 }
 
